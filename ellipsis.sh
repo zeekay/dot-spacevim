@@ -11,16 +11,17 @@ helper() {
     # run command for each vice installed addon
     for addon in ~/.vim/addons/*; do
         # git status/push only repos which are ours
-        if [ $1 = "git.pull" ] || [ "$(cat $addon/.git/config | grep url | grep $ELLIPSIS_USER)" ]; then
+        if [ "$(cat $addon/.git/config | grep url | grep $ELLIPSIS_USER)" ]; then
             cd $addon
             $1 vim/$(basename $addon)
         fi
     done
 
     # also run command for each addon installed by spacevim
-    for addon in ~/.vim/bundles/*; do
+    for addon in ~/.vim/bundle/*; do
+
         # git status/push only repos which are ours
-        if [ $1 = "git.pull" ] || [ "$(cat $addon/.git/config | grep url | grep $ELLIPSIS_USER)" ]; then
+        if fs.file_exists ~/.vim/bundle/$addon/.git/config && [ "$(cat $addon/.git/config | grep url | grep $ELLIPSIS_USER)" ]; then
             cd $addon
             $1 vim/$(basename $addon)
         fi
@@ -60,7 +61,7 @@ pkg.pull() {
 }
 
 pkg.status() {
-    helper hooks.status
+    helper git.pull
 }
 
 pkg.push() {
