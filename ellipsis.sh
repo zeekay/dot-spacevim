@@ -54,6 +54,7 @@ pkg.link() {
     fs.link_file $PKG_PATH/spacevim ~/.vim
     fs.link_file $PKG_PATH/spacevim ~/.nvim
     fs.link_file $PKG_PATH/spacevim ~/.config/nvim
+    fs.link_file $PKG_PATH/spacevim ~/.SpaceVim
 }
 
 pkg.pull() {
