@@ -43,7 +43,7 @@ pkg.install() {
 }
 
 pkg.link() {
-    files=(inputrc gvimrc vimgitrc vimpagerrc xvimrc SpaceVim.d)
+    files=(inputrc gvimrc vimrc vimgitrc vimpagerrc xvimrc SpaceVim.d)
 
     for file in ${files[@]}; do
         fs.link_file $file
@@ -53,7 +53,6 @@ pkg.link() {
     fs.link_file $PKG_PATH/spacevim ~/.vim
     fs.link_file $PKG_PATH/spacevim ~/.nvim
     fs.link_file $PKG_PATH/spacevim ~/.config/nvim
-    fs.link_file $PKG_PATH/spacevim/vimrc ~/.vimrc
 }
 
 pkg.pull() {
