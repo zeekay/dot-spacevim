@@ -25,8 +25,7 @@
   # true colors
   enable_guicolors = true
 
-  # Disable statusline separator, if you want to use other value, please
-  # install nerd fonts
+  # Disable statusline separator
   statusline_separator = "nil"
   statusline_iseparator = "nil"
   buffer_index_type = 0
@@ -53,17 +52,21 @@
 
   # hide file
   enable_vimfiler_welcome = true
-  filemanager = "defx"
+  filemanager = "nerdtree"
 
   # Update SpaceVim automatically
   automatic_update = false
 
 # Enable autocomplete layer
 [[layers]]
-  name = 'autocomplete'
-  enable = true
-  auto_completion_return_key_behavior = "complete"
+  name = "autocomplete"
+  autocomplete_method = "deoplete"
+  auto_completion_return_key_behavior = "nil"
   auto_completion_tab_key_behavior = "smart"
+  auto_completion_delay = 200
+  auto_completion_complete_with_key_sequence = "jk"
+  auto_completion_complete_with_key_sequence_delay = 0.1
+  autocomplete_parens = true
 
 [[layers]]
   name = 'shell'
