@@ -32,7 +32,7 @@ pkg.install() {
     git.clone https://github.com/SpaceVim/SpaceVim $PKG_PATH/spacevim
 
     # install dependencies
-    mkdir -p $PKG_PATH/addons && cd $PKG_PATH/addons
+    mkdir -p $PKG_PATH/spacevim/addons && cd $PKG_PATH/spacevim/addons
     git.clone https://github.com/zeekay/vice
     git.clone https://github.com/MarcWeber/vim-addon-manager
     git.clone https://github.com/ternjs/tern_for_vim
