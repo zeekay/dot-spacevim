@@ -2,14 +2,23 @@
 #
 # zeekay/vim
 #
-# My vice-based vim configuration.
+# My spacevim-based vim configuration.
 
 # Forward ellipsis commands to vim addons
 helper() {
     $1
 
-    # run command for each addon
+    # run command for each vice installed addon
     for addon in ~/.vim/addons/*; do
+        # git status/push only repos which are ours
+        if [ $1 = "git.pull" ] || [ "$(cat $addon/.git/config | grep url | grep $ELLIPSIS_USER)" ]; then
+            cd $addon
+            $1 vim/$(basename $addon)
+        fi
+    done
+
+    # also run command for each addon installed by spacevim
+    for addon in ~/.vim/bundles/*; do
         # git status/push only repos which are ours
         if [ $1 = "git.pull" ] || [ "$(cat $addon/.git/config | grep url | grep $ELLIPSIS_USER)" ]; then
             cd $addon
@@ -18,28 +27,10 @@ helper() {
     done
 }
 
-# Update various deps
-update_deps() {
-    cd ~/.vim/addons/vimproc && make
-    if utils.cmd_exists npm; then
-        cd ~/.vim/addons/tern_for_vim && npm update
-    fi
-}
-
-pkg.link() {
-    files=(inputrc gvimrc vimrc vimgitrc vimpagerrc xvimrc)
-
-    for file in ${files[@]}; do
-        fs.link_file $file
-    done
-
-    # link module into ~/.vim
-    fs.link_file $PKG_PATH
-    mkdir -p ~/.config/nvim
-    fs.link_file $PKG_PATH/nvimrc ~/.config/nvim/init.vim
-}
-
 pkg.install() {
+    # install spacevim
+    git.clone https://github.com/SpaceVim/SpaceVim $PKG_PATH/spacevim
+
     # install dependencies
     mkdir -p $PKG_PATH/addons && cd $PKG_PATH/addons
     git.clone https://github.com/zeekay/vice
@@ -47,15 +38,26 @@ pkg.install() {
     git.clone https://github.com/ternjs/tern_for_vim
     git.clone https://github.com/Shougo/vimproc
 
-    update_deps
-
     # use vim as git mergetool
     git.add_include '~/.vim/gitinclude'
 }
 
+pkg.link() {
+    files=(inputrc gvimrc vimgitrc vimpagerrc xvimrc SpaceVim.d)
+
+    for file in ${files[@]}; do
+        fs.link_file $file
+    done
+
+    # link spacevim
+    fs.link_file $PKG_PATH/spacevim ~/.vim
+    fs.link_file $PKG_PATH/spacevim ~/.nvim
+    fs.link_file $PKG_PATH/spacevim ~/.config/nvim
+    fs.link_file $PKG_PATH/spacevim/vimrc ~/.vimrc
+}
+
 pkg.pull() {
     helper git.pull
-    update_deps
 }
 
 pkg.status() {
