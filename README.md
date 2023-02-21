@@ -1,8 +1,8 @@
-# zeekay/vim
-My vim dotfiles, compatible with [ellipsis][ellipsis].
+# zeekay/spacevim
+My spacevim friendly dotfiles, compatible with [ellipsis][ellipsis].
 
 ## Features
-Leverages my awesome vim framework, [vice][vice]. All the bells and whistles.
+Leverages my awesome vim framework, [vice][vice]. `vimcompatible` with vice-powered bells and whistles.
 
 ## Install
 Clone and symlink or install with [ellipsis][ellipsis]:
@@ -18,7 +18,7 @@ Can be used to customize options set for vice.
 Will be sourced after default vimrc.
 
 ```
-$ ellipsis install zeekay/vim
+$ ellipsis install zeekay/spacevim
 ```
 
 [ellipsis]: http://ellipsis.sh
