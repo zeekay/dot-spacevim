@@ -22,6 +22,8 @@ pkg.install() {
     # install spacevim
     git.clone https://github.com/SpaceVim/SpaceVim $PKG_PATH/spacevim
 
+    mkdir -p $PKG_PATH/spacevim/tmp/backup
+
     # install dependencies
     mkdir -p $PKG_PATH/spacevim/addons && cd $PKG_PATH/spacevim/addons
     git.clone https://github.com/zeekay/vice
