@@ -16,20 +16,13 @@ helper() {
             $1 vim/$(basename $addon)
         fi
     done
-
-    # also run command for each addon installed by spacevim
-    for addon in ~/.vim/bundle/*; do
-        # git status/push only repos which are ours
-        if [ $1 = "git.pull" ] || [ "$(cat ~/.vim/bundle/$addon/.git/config | grep url | grep $ELLIPSIS_USER)" ]; then
-            cd $addon
-            $1 vim/$(basename $addon)
-        fi
-    done
 }
 
 pkg.install() {
     # install spacevim
     git.clone https://github.com/SpaceVim/SpaceVim $PKG_PATH/spacevim
+
+    mkdir -p $PKG_PATH/spacevim/tmp/backup
 
     # install dependencies
     mkdir -p $PKG_PATH/spacevim/addons && cd $PKG_PATH/spacevim/addons
