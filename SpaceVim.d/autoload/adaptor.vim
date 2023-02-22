@@ -6,6 +6,8 @@ function! adaptor#before() abort
           \ 'github:zeekay/vice-markdown',
           \ 'github:zeekay/vice-nerdtree',
           \ 'github:zeekay/vice-polyglot',
+          \ 'github:zeekay/vice-undo',
+          \ 'github:zeekay/vice-nerdtree',
           \ 'github:zeekay/vice-standard-issue',
           \ 'github:tpope/vim-vinegar',
           \ 'github:godlygeek/tabular',
@@ -64,6 +66,24 @@ function! adaptor#after() abort
   unmap  <leader>ql
   unmap  <leader>qp
   unmap  <leader>qn
+  unmap  <leader>nr
+  " Remove mappings that begin with <esc> which slow leaving insert mode
+  iunmap  <Esc><
+  iunmap  <Esc>>
+  iunmap  <Esc>-
+  iunmap  <Esc>=
+  iunmap  <Esc>L
+  iunmap  <Esc>K
+  iunmap  <Esc>J
+  iunmap  <Esc>H
+  iunmap  <Esc>l
+  iunmap  <Esc>k
+  iunmap  <Esc>j
+  iunmap  <Esc>h
+  iunmap  <Esc>OD
+  iunmap  <Esc>OC
+  iunmap  <Esc>OB
+  iunmap  <Esc>OA
 
   " Hide tabline
   set showtabline=0
