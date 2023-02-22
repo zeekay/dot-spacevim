@@ -22,6 +22,19 @@
   colorscheme = "muon"
   colorscheme_bg = "dark"
 
+  # custom statusline to match muon
+  custom_color_palette = [
+    ["#222222", "#444444", 246, 235],  # window id
+    ["#4e4e4e", "#242424", 239, 246],  # statusline sections
+    ["#4e4e4e", "#252525", 237, 246],  # statusline sections
+    ["#252525", 241],                  # empty area
+    ["#222222", "#fefefe", 235, 109],  # window id insert mode
+    ["#000000", "#272727", 235, 208],  # window id visual mode
+    ["#000000", "#282828", 235, 108],  # window id select mode
+    ["#000000", "#222222", 235, 72],   # window id iedit-insert mode
+    ["#000000", "#222222", 235, 132],  # window id iedit-normal mode
+  ]
+
   # true colors
   enable_guicolors = true
 
