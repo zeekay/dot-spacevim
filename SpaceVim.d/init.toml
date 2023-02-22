@@ -22,6 +22,19 @@
   colorscheme = "muon"
   colorscheme_bg = "dark"
 
+  # custom statusline to match muon
+  custom_color_palette = [
+    ["#222222", "#888888", 246, 235],  # window id
+    ["#444444", "#222222", 239, 246],  # statusline sections
+    ["#444444", "#222222", 237, 246],  # statusline sections
+    ["#222222", 241],                  # empty area
+    ["#222222", "#fefefe", 235, 109],  # window id insert mode
+    ["#222222", "#777777", 235, 208],  # window id visual mode
+    ["#222222", "#666666", 235, 108],  # window id select mode
+    ["#222222", "#555555", 235, 72],   # window id iedit-insert mode
+    ["#222222", "#444444", 235, 132],  # window id iedit-normal mode
+  ]
+
   # true colors
   enable_guicolors = true
 
@@ -30,6 +43,8 @@
   statusline_iseparator = "nil"
   buffer_index_type = 0
 
+  default_indent = 4
+  expand_tab = true
   enable_tabline_filetype_icon = true
 
   # Enable/Disable show mode on statusline
@@ -205,3 +220,8 @@
 #      125. lang#xquery...........................|SpaceVim-layers-lang-xquery|
 #      126. lang#yang...............................|SpaceVim-layers-lang-yang|
 #      127. lang#zig.................................|SpaceVim-layers-lang-zig|
+
+[[custom_plugins]]
+    repo = "wsdjeg/dein-ui.vim"
+    # note: you need to disable merged feature
+    merged = false
