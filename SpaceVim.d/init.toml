@@ -225,3 +225,8 @@
     repo = "wsdjeg/dein-ui.vim"
     # note: you need to disable merged feature
     merged = false
+
+[[custom_plugins]]
+   repo = "0xStabby/chatgpt-vim"
+    # note: you need to disable merged feature
+   merged = false
