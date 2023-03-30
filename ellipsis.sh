@@ -6,12 +6,12 @@
 
 # Forward ellipsis commands to vim addons
 helper() {
-    $1
+    $1 ~/.el/pkg/spacevim
 
     # run command for each vice installed addon
     for addon in ~/.vim/addons/*; do
         # git status/push only repos which are ours
-        if [ $1 = "git.pull" ] || [ "$(cat $addon/.git/config | grep url | grep $ELLIPSIS_USER)" ]; then
+        if [ "$(cat $addon/.git/config | grep url | grep $ELLIPSIS_USER)" ]; then
             cd $addon
             $1 vim/$(basename $addon)
         fi
@@ -54,7 +54,7 @@ pkg.pull() {
 }
 
 pkg.status() {
-    helper git.pull
+    helper hooks.status
 }
 
 pkg.push() {
