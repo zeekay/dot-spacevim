@@ -35,6 +35,7 @@ if has('mac') && version > 702
         \ 'enable_racer':          1,
     \ }
     let options.polyglot = {'enable_ghcmod': 1}
+    color muon
 endif
 
 let &rtp.=','.expand('~/.vim/addons/vice')

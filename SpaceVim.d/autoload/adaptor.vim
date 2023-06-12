@@ -68,23 +68,20 @@ function! adaptor#after() abort
   unmap  <leader>qn
   unmap  <leader>nr
   " Remove mappings that begin with <esc> which slow leaving insert mode
-  iunmap  <Esc><
-  iunmap  <Esc>>
-  iunmap  <Esc>-
-  iunmap  <Esc>=
-  iunmap  <Esc>L
-  iunmap  <Esc>K
-  iunmap  <Esc>J
-  iunmap  <Esc>H
-  iunmap  <Esc>l
-  iunmap  <Esc>k
-  iunmap  <Esc>j
-  iunmap  <Esc>h
-  iunmap  <Esc>OD
-  iunmap  <Esc>OC
-  iunmap  <Esc>OB
-  iunmap  <Esc>OA
-
-  " Hide tabline
-  set showtabline=0
+  " iunmap  <Esc><
+  " iunmap  <Esc>>
+  " iunmap  <Esc>-
+  " iunmap  <Esc>=
+  " iunmap  <Esc>L
+  " iunmap  <Esc>K
+  " iunmap  <Esc>J
+  " iunmap  <Esc>H
+  " iunmap  <Esc>l
+  " iunmap  <Esc>k
+  " iunmap  <Esc>j
+  " iunmap  <Esc>h
+  " iunmap  <Esc>OD
+  " iunmap  <Esc>OC
+  " iunmap  <Esc>OB
+  " iunmap  <Esc>OA
 endfunction
