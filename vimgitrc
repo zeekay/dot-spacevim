@@ -8,7 +8,6 @@ let options = {
         \ 'github:zeekay/vice-git',
         \ 'github:zeekay/vice-markdown',
         \ 'github:zeekay/vice-polyglot',
-        \ 'github:zeekay/vice-complete',
         \ 'github:zeekay/vice-standard-issue',
         \ 'github:zeekay/vice-make',
         \ 'github:zeekay/vice-undo',
@@ -27,14 +26,7 @@ let options = {
 
 if has('mac') && version > 702
     let options.addons += ['github:Shougo/vimproc', 'github:Shougo/vimshell']
-    let options.complete = {
-        \ 'enable_clang_complete': 1,
-        \ 'enable_jedi':           1,
-        \ 'enable_necoghc':        1,
-        \ 'enable_tern':           1,
-        \ 'enable_racer':          1,
-    \ }
-    let options.polyglot = {'enable_ghcmod': 1}
+    let options.polyglot = {'enable_ghcmod': 0}
 endif
 
 let &rtp.=','.expand('~/.vim/addons/vice')
