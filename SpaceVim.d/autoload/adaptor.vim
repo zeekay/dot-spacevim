@@ -85,5 +85,4 @@ function! adaptor#after() abort
   " iunmap  <Esc>OC
   " iunmap  <Esc>OB
   " iunmap  <Esc>OA
-  set norelativenumber
 endfunction
