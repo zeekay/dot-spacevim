@@ -4,6 +4,7 @@ function! adaptor#before() abort
           \ 'github:zeekay/vice-colorful',
           \ 'github:zeekay/vice-git',
           \ 'github:zeekay/vice-markdown',
+          \ 'github:zeekay/vice-make',
           \ 'github:zeekay/vice-nerdtree',
           \ 'github:zeekay/vice-polyglot',
           \ 'github:zeekay/vice-undo',
@@ -24,12 +25,12 @@ function! adaptor#before() abort
   \ }
 
   let options.complete = {
-      \ 'enable_clang_complete': 0,
-      \ 'enable_jedi':           0,
+      \ 'enable_clang_complete': 1,
+      \ 'enable_jedi':           1,
       \ 'enable_necoghc':        0,
       \ 'enable_tern':           0,
       \ 'enable_racer':          0,
-      \ 'enable_typescript':     0,
+      \ 'enable_typescript':     1,
   \ }
   let options.polyglot = {'enable_ghcmod': 0}
 
@@ -84,4 +85,5 @@ function! adaptor#after() abort
   " iunmap  <Esc>OC
   " iunmap  <Esc>OB
   " iunmap  <Esc>OA
+  set norelativenumber
 endfunction
