@@ -35,7 +35,6 @@ if has('mac') && version > 702
         \ 'enable_racer':          1,
     \ }
     let options.polyglot = {'enable_ghcmod': 1}
-    color muon
 endif
 
 let &rtp.=','.expand('~/.vim/addons/vice')
@@ -84,4 +83,22 @@ au VimEnter * call s:JumpToFirstDiff()
 
 if filereadable(expand('~/.vim/theme.vim')) | so ~/.vim/theme.vim | endif
 
+color muon
+
+function! JumpToNextConflict()
+    let l:current_line = line('.')
+    let l:conflict_line = search('^\([<=>]\{7}\|=======\|>>>>>>> \)')
+    if l:conflict_line != 0
+        call cursor(l:conflict_line, 1)
+        redraw
+        echo "Jumped to next conflict"
+    else
+        call cursor(l:current_line, 1)
+        redraw
+        echo "No more conflicts found"
+    endif
+endfunction
+
+" Map a key to invoke the function
+nnoremap <silent> <leader>c :call JumpToNextConflict()<CR>
 " vim:set ft=vim:
