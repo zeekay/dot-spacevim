@@ -10,6 +10,8 @@
 [options]
   vimcompatible = true
 
+  disabled_plugins = ["neopairs.vim"]
+
   # Disable various spacevim remaps
   enable_language_specific_leader = false
   escape_key_binding = ''
