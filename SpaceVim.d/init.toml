@@ -35,8 +35,10 @@
     ["#222222", "#444444", 235, 132],  # window id iedit-normal mode
   ]
 
+  # GUI font
   guifont = "SFMono Nerd Font:h13"
-  # true colors
+
+  # Use true colors
   enable_guicolors = true
 
   # Disable statusline separator
@@ -44,19 +46,24 @@
   statusline_iseparator = "nil"
   buffer_index_type = 0
 
-  default_indent = 4
+  default_indent = 2
   expand_tab = true
-  # enable_tabline_filetype_icon = true
 
   relativenumber = false
 
   # Enable/Disable show mode on statusline
   enable_statusline_mode = true
   enable_statusline_tag = true
-  # enable_tabline_ft_icon = true
+  enable_tabline_ft_icon = true
 
   # left sections of statusline
-  statusline_left_sections = []
+  statusline_left_sections = [
+       'winnr',
+       'major mode',
+       'filename',
+       'fileformat',
+       'search status'
+    ]
 
   # right sections of statusline
   statusline_right_sections = [
@@ -82,7 +89,7 @@
   auto_completion_return_key_behavior = "nil"
   auto_completion_tab_key_behavior = "smart"
   auto_completion_delay = 200
-  auto_completion_complete_with_key_sequence = "jk"
+  auto_completion_complete_with_key_sequence = "<c-x>"
   auto_completion_complete_with_key_sequence_delay = 0.1
   autocomplete_parens = true
 
@@ -122,6 +129,9 @@
   name = "incsearch"
   enable = true
 
+[[layers]]
+  name = "lang#go"
+  enable = true
 #      24. lang#WebAssembly..................|SpaceVim-layers-lang-WebAssembly|
 #      25. lang#actionscript................|SpaceVim-layers-lang-actionscript|
 #      26. lang#agda................................|SpaceVim-layers-lang-agda|
@@ -228,11 +238,9 @@
 #      127. lang#zig.................................|SpaceVim-layers-lang-zig|
 
 [[custom_plugins]]
-    repo = "wsdjeg/dein-ui.vim"
-    # note: you need to disable merged feature
-    merged = false
+  repo = "wsdjeg/dein-ui.vim"
+  merged = false
 
 [[custom_plugins]]
-   repo = "0xStabby/chatgpt-vim"
-    # note: you need to disable merged feature
-   merged = false
+  repo = "0xStabby/chatgpt-vim"
+  merged = false
