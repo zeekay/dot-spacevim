@@ -89,7 +89,7 @@
   auto_completion_return_key_behavior = "nil"
   auto_completion_tab_key_behavior = "smart"
   auto_completion_delay = 200
-  auto_completion_complete_with_key_sequence = "<c-x>"
+  auto_completion_complete_with_key_sequence = "nil"
   auto_completion_complete_with_key_sequence_delay = 0.1
   autocomplete_parens = true
 
@@ -105,7 +105,7 @@
 
 [[layers]]
   name = "core#statusline"
-  enable = true
+  enable = false
 
 [[layers]]
   name = "core#tabline"
@@ -129,9 +129,6 @@
   name = "incsearch"
   enable = true
 
-[[layers]]
-  name = "lang#go"
-  enable = true
 #      24. lang#WebAssembly..................|SpaceVim-layers-lang-WebAssembly|
 #      25. lang#actionscript................|SpaceVim-layers-lang-actionscript|
 #      26. lang#agda................................|SpaceVim-layers-lang-agda|
@@ -244,3 +241,6 @@
 [[custom_plugins]]
   repo = "0xStabby/chatgpt-vim"
   merged = false
+
+[[layers]]
+  name = "lang#go"
