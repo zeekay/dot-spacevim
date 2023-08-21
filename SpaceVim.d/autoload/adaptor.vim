@@ -10,6 +10,7 @@ function! adaptor#before() abort
           \ 'github:zeekay/vice-undo',
           \ 'github:zeekay/vice-nerdtree',
           \ 'github:zeekay/vice-standard-issue',
+          \ 'github:zeekay/vice-lightline',
           \ 'github:tpope/vim-vinegar',
           \ 'github:godlygeek/tabular',
       \ ],
