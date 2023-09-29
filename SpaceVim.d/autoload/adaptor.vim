@@ -1,4 +1,4 @@
-function! adaptor#before() abort
+func! adaptor#before() abort
   let options = {
       \ 'addons': [
           \ 'github:zeekay/vice-colorful',
@@ -38,9 +38,9 @@ function! adaptor#before() abort
   let &rtp.=','.expand('~/.vim/addons/vice')
 
   call vice#Initialize(options)
-endfunction
+endf
 
-function! adaptor#after() abort
+func! adaptor#after() abort
   " Prevent cursor from moving when leaving insert mode
   inoremap <silent> <Esc> <Esc>`^
 
@@ -86,4 +86,14 @@ function! adaptor#after() abort
   " iunmap  <Esc>OC
   " iunmap  <Esc>OB
   " iunmap  <Esc>OA
-endfunction
+
+  let g:neural = {
+  \   'source': {
+  \       'openai': {
+  \           'api_key': $OPENAI_API_KEY,
+  \       },
+  \   },
+  \}
+
+  noremap <C-n> <Plug>(neural_prompt)
+endf
