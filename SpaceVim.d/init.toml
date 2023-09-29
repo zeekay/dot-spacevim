@@ -10,7 +10,6 @@
 [options]
   vimcompatible = true
 
-  disabled_plugins = ["neopairs.vim"]
 
   # Disable various spacevim remaps
   enable_language_specific_leader = false
@@ -18,11 +17,13 @@
   windows_leader = ''
   windows_smartclose = ''
 
-  # set spacevim theme. by default colorscheme layer is not loaded,
-  # if you want to use more colorscheme, please load the colorscheme
-  # layer
-  colorscheme = "muon"
+  # Disable broken outdated plugins
+  # disabled_plugins = ["neopairs.vim", "delimitMate"]
+
+  # set spacevim theme. by default colorscheme layer is not loaded, if you want
+  # to use more colorscheme, please load the colorscheme layer
   colorscheme_bg = "dark"
+  colorscheme = "muon"
 
   # custom statusline to match muon
   custom_color_palette = [
@@ -54,9 +55,9 @@
   relativenumber = false
 
   # Enable/Disable show mode on statusline
-  enable_statusline_mode = true
+  enable_statusline_mode = false
   enable_statusline_tag = true
-  enable_tabline_ft_icon = true
+  enable_tabline_ft_icon = false
 
   # left sections of statusline
   statusline_left_sections = [
@@ -103,15 +104,15 @@
 
 [[layers]]
   name = "colorscheme"
-  enable = true
+  enable = false
 
 [[layers]]
   name = "core#statusline"
-  enable = false
+  enable = true
 
 [[layers]]
   name = "core#tabline"
-  enable = false
+  enable = true
 
 [[layers]]
   name = "ui"
@@ -241,8 +242,25 @@
   merged = false
 
 [[custom_plugins]]
-  repo = "0xStabby/chatgpt-vim"
+  repo = 'muniftanjim/nui.nvim'
   merged = false
 
-[[layers]]
-  name = "lang#go"
+[[custom_plugins]]
+  repo = 'elpiloto/significant.nvim'
+  merged = false
+
+#[[custom_plugins]]
+#  repo = "aduros/ai.vim"
+#  merged = false
+
+#[[custom_plugins]]
+#  repo = "madox2/vim-ai"
+#  merged = false
+
+#[[custom_plugins]]
+#  repo = 'dense-analysis/neural'
+#  merged = false
+
+[[custom_plugins]]
+  repo = 'archibate/nvim-gpt'
+  merged = false
