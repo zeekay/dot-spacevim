@@ -20,7 +20,8 @@ helper() {
 
 pkg.install() {
     # install spacevim
-    git.clone https://github.com/SpaceVim/SpaceVim $PKG_PATH/spacevim
+    git.clone https://gitlab.com/SpaceVim/SpaceVim $PKG_PATH/spacevim
+
 
     mkdir -p $PKG_PATH/spacevim/tmp/backup
 
