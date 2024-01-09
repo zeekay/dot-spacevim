@@ -50,7 +50,6 @@ func! adaptor#after() abort
   " Mappings
   nnoremap <leader>g :GitGutterToggle<cr>
   nnoremap <leader>i :IndentGuidesToggle<cr>
-  nnoremap <leader>m :set mouse=a<cr>
   nnoremap <leader>n :NERDTreeToggle<cr>
   nnoremap <leader>q :call vice#standard_issue#smart_quit()<cr>
   nnoremap Q :call vice#standard_issue#smart_quit()<cr>
@@ -97,3 +96,6 @@ func! adaptor#after() abort
 
   noremap <C-n> <Plug>(neural_prompt)
 endf
+
+nnoremap ZZ :wqa<cr>
+set mouse=
