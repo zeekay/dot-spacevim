@@ -257,9 +257,9 @@
 #  repo = "madox2/vim-ai"
 #  merged = false
 
-#[[custom_plugins]]
-#  repo = 'dense-analysis/neural'
-#  merged = false
+[[custom_plugins]]
+  repo = 'zeekay/neural'
+  merged = false
 
 [[custom_plugins]]
   repo = 'archibate/nvim-gpt'
