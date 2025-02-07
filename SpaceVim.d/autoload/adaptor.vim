@@ -62,12 +62,12 @@ func! adaptor#after() abort
   " au filetype go nnoremap <buffer> <silent> K <c-u>
 
   " Remove standard spacevim mappings which conflict with \q
-  unmap  <leader>qc
-  unmap  <leader>qr
-  unmap  <leader>ql
-  unmap  <leader>qp
-  unmap  <leader>qn
-  unmap  <leader>nr
+  silent! unmap  <leader>qc
+  silent! unmap  <leader>qr
+  silent! unmap  <leader>ql
+  silent! unmap  <leader>qp
+  silent! unmap  <leader>qn
+  silent! unmap  <leader>nr
   " Remove mappings that begin with <esc> which slow leaving insert mode
   " iunmap  <Esc><
   " iunmap  <Esc>>
@@ -86,16 +86,17 @@ func! adaptor#after() abort
   " iunmap  <Esc>OB
   " iunmap  <Esc>OA
 
-  let g:neural = {
-  \   'source': {
-  \       'openai': {
-  \           'api_key': $OPENAI_API_KEY,
-  \       },
-  \   },
-  \}
-
   noremap <C-n> <Plug>(neural_prompt)
 endf
 
 nnoremap ZZ :wqa<cr>
 set mouse=
+
+let g:neural = {
+\   'source': {
+\       'openai': {
+\           'api_key': $OPENAI_API_KEY,
+\       },
+\   },
+\}
+
