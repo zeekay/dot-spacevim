@@ -132,6 +132,27 @@
   name = "incsearch"
   enable = true
 
+[[layers]]
+  name = "checkers"
+  enable = true
+
+[[custom_plugins]]
+  name = "neomake/neomake"
+  merged = false
+#
+[options]
+  # Enable flake8 for Python
+  enable_neomake = true
+#
+#[options.autocomplete_method]
+#  python = "coc"
+#
+## Add this to your init.vim or init.toml
+#[[custom_plugins]]
+#  name = "Vimjas/vim-python-pep8-indent"
+#  merged = false
+
+
 #      24. lang#WebAssembly..................|SpaceVim-layers-lang-WebAssembly|
 #      25. lang#actionscript................|SpaceVim-layers-lang-actionscript|
 #      26. lang#agda................................|SpaceVim-layers-lang-agda|

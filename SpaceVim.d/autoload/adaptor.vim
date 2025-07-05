@@ -1,10 +1,11 @@
 func! adaptor#before() abort
+
+  "\ 'github:zeekay/vice-make',
   let options = {
       \ 'addons': [
           \ 'github:zeekay/vice-colorful',
           \ 'github:zeekay/vice-git',
           \ 'github:zeekay/vice-markdown',
-          \ 'github:zeekay/vice-make',
           \ 'github:zeekay/vice-nerdtree',
           \ 'github:zeekay/vice-polyglot',
           \ 'github:zeekay/vice-undo',
@@ -87,6 +88,21 @@ func! adaptor#after() abort
   " iunmap  <Esc>OA
 
   noremap <C-n> <Plug>(neural_prompt)
+
+  let g:neomake_python_enabled_makers = ['flake8']
+  let g:neomake_python_flake8_maker = {
+      \ 'args': ['--max-line-length=120', '--ignore=E501,E302'],
+      \ 'errorformat':
+          \ '%E%f:%l:%c: %t%n %m,' .
+          \ '%E%f:%l: %t%n %m,' .
+          \ '%W%f:%l:%c: %t%n %m,' .
+          \ '%W%f:%l: %t%n %m,' .
+          \ '%E%f:%l:%c: %m,' .
+          \ '%E%f:%l: %m,' .
+          \ '%-G%.%#',
+  \ }
+
+  set showtabline=1
 endf
 
 nnoremap ZZ :wqa<cr>
