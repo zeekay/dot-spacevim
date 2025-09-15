@@ -42,6 +42,10 @@ func! adaptor#before() abort
 endf
 
 func! adaptor#after() abort
+  " Fix vim-matchup maxmempattern error
+  " Increase the memory limit for pattern matching (default is 1000)
+  set maxmempattern=2000
+
   " Prevent cursor from moving when leaving insert mode
   inoremap <silent> <Esc> <Esc>`^
 
